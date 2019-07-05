@@ -1,0 +1,12 @@
+dist: xenial
+language: python
+python:
+  - "3.6"
+services:
+  - docker
+install:
+  - pip install tox
+before_script:
+  - docker build -t server .
+  - docker run -itd -p "127.0.0.1:8000:8000" server
+script: tox
