@@ -7,7 +7,7 @@ HERE = dirname(abspath(__file__))
 README = open(join(HERE, 'README.md')).read()
 CHANGES = open(join(HERE, 'CHANGES.md')).read()
 
-REQUIRES = []
+REQUIRES = ['Flask>=1.0.2', 'WeasyPrint>=47']
 
 
 setup(
