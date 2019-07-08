@@ -30,7 +30,7 @@ Supported formats:
 You will only need to start a container:
 
 ```
-docker run -itd -p "127.0.0.1:8000:8000" maximen7c/convert2pdf
+docker run -itd -p "127.0.0.1:8000:8000" geotrekce/convert2pdf
 ```
 
 ### How to make a request to the server
