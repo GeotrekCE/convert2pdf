@@ -13,11 +13,14 @@ RUN apt-get update && \
     libffi-dev \
     shared-mime-info && \
     rm -rf /var/lib/apt/lists/* && \
-    rm -rf /var/cache/apt/*
+    rm -rf /var/cache/apt/* && \
+    useradd -d /home/c2puser -m -s /bin/bash c2puser
 RUN pip3 install --no-cache-dir gunicorn && \
     pip3 install --no-cache-dir -e /opt/apps/convert2pdf/
 
 ADD .docker/run.sh /usr/local/bin/run
+
+USER c2puser
 
 EXPOSE 8000
 
